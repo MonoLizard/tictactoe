@@ -1,0 +1,36 @@
+.game{
+	font-family: 'Bungee', 'Helvetica Neue', sans-serif;
+	text-align: center;
+
+	&__background{
+		height: 0;
+		position: absolute;
+		transition: height 1s ease;
+		width: 100vw;
+
+		&--o{
+			background-color: #d800ff;
+		}
+
+		&--x{
+			background-color: #00ffd0;
+		}
+	}
+
+	&__title{
+		color: #06feff;
+		display: flex;
+		justify-content: space-between;
+		padding: 1vw;
+		position: absolute;
+		width: 100%;
+	}
+}
+
+@media(max-width: 650px){
+	.game{
+		&__title{
+			padding: 2.5vw;
+		}
+	}
+}

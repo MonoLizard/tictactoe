@@ -1,0 +1,13 @@
+<td @click="onItemClickHandler" :class="{'cell--active': activePiece !== ''}" class="cell">
+	<span :class="{'cell__piece--active': activePiece === 'X'}" class="cell__piece cell__piece--x">
+		<svg viewBox="0 0 128 128">
+			<path class="cell__piece-path" d="M16,16L112,110"></path>
+			<path class="cell__piece-path" d="M112,16L16,110"></path>
+		</svg>
+	</span>
+	<span :class="{'cell__piece--active': activePiece === 'O'}" class="cell__piece cell__piece--o">
+		<svg viewBox="0 0 128 128">
+			<path class="cell__piece-path" fill="none" d="M64,16A48,48 0 1,0 64,112A48,48 0 1,0 64,16"></path>
+		</svg>
+	</span>
+</td>

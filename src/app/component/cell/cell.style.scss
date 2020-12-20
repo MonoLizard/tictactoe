@@ -1,0 +1,87 @@
+.cell {
+	$parent: &;
+	color: #fff;
+	cursor: pointer;
+	height: 10vw;
+	position: relative;
+	-webkit-tap-highlight-color: transparent;
+	width: 10vw;
+
+	&--active{
+		pointer-events: none;
+	}
+
+	&__piece{
+		display: inline-block;
+		height: 5vw;
+		left: 50%;
+		position: absolute;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		width: 5vw;
+
+		&--o{
+			#{$parent}__piece-path{
+				stroke: #f72585;
+				stroke-dasharray: 301.635;
+				stroke-dashoffset: 301.635;
+			}
+		}
+
+		&--x{
+			#{$parent}__piece-path{
+				stroke: #06feff;
+				stroke-dasharray: 135.764;
+				stroke-dashoffset: 135.764;
+
+				&:last-child{
+					transition-delay: 0.15s;
+				}
+			}
+		}
+
+		&--active{
+			#{$parent}__piece-path{
+				stroke-dashoffset: 0;
+			}
+		}
+	}
+
+	&__piece-path{
+		stroke-linecap: round;
+		stroke-width: 0.5vw;
+		transition: stroke-dashoffset 0.35s ease;
+	}
+}
+
+@media(max-width: 1024px){
+	.cell{
+		height: 18vw;
+		width: 18vw;
+
+		&__piece{
+			height: 13vw;
+			width: 13vw;
+		}
+
+		&__piece-path{
+			stroke-width: 1vw;
+		}
+	}
+}
+
+@media(max-width: 650px){
+	.cell{
+		height: 30vw;
+		width: 30vw;
+
+		&__piece{
+			height: 22vw;
+			width: 22vw;
+		}
+
+		&__piece-path{
+			stroke-width: 2vw;
+		}
+	}
+}

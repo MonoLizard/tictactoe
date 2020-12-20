@@ -1,0 +1,17 @@
+<div class="board">
+	<div class="board__score">
+		<span class="board__text">You: {{xWinCount}}</span>
+		<span class="board__text">Draw: {{drawCount}}</span>
+		<span class="board__text">AI: {{oWinCount}}</span>
+	</div>
+	<div class="board__wrapper">
+		<div class="board__win" :class="{'board__win--active': showWinner}">{{winnerText}}</div>
+		<table class="board__table">
+			<tbody>
+				<tr v-for="n in 3" class="board__row">
+					<cell v-for="k in 3" class="board__cell" :id="3*(n-1)+k" :key="this.id" ref="cells"></cell>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
